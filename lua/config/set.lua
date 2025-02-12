@@ -1,7 +1,3 @@
--- we activate the colorscheme when openning nvim
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
-
 --line numbers
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -24,6 +20,8 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 --search configs
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
 
 --scroll option
 vim.opt.scrolloff = 8
