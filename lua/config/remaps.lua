@@ -16,18 +16,24 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
+
 -- remaps to navigate tmux windows (same as nvim)
 vim.keymap.set('n', '<C-h>', ':TmuxNavigateLeft<CR>')
 vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>')
 vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>')
 vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<CR>')
--- remap to replace words
-vim.keymap.set('n', '<leader>rw', ':%s/\\<<C-r><C-w>\\>//c<Left><Left>', opts)
 
 -- For conciseness
 local opts = { noremap = true, silent = true }
+
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
+
+-- remap to replace words
+vim.keymap.set('n', '<leader>rw', ':%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>', opts)
+
+-- telescope to find todo comments
+vim.keymap.set('n', '<leader>td', ':TodoTelescope<CR>', opts);
 
 -- Resize with arrows
 vim.keymap.set('n', '<Up>', ':resize -2<CR>', opts)
