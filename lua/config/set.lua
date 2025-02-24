@@ -27,6 +27,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
 --yank == copy pc
+-- INFO: requires xclip to function
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)

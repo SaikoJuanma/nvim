@@ -17,7 +17,8 @@ return {
             NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
             TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
             PARAM = { icon = "󰊕 ", color = "hint", alt ={"param"} },
-            RETURN = { icon = "󰌑 ", color = "info" , alt = {"return"}}
+            RETURN = { icon = "󰌑 ", color = "info" , alt = {"return"}},
+            BRIEF = { icon = "󱚡", color = "test", alt = {"brief"}}
         },
         gui_style = {
             fg = "NONE",
