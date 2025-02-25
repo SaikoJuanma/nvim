@@ -58,6 +58,8 @@ local cmp_mappings = cmp.mapping.preset.insert({
    ["<CR>"] = cmp.mapping.confirm({ select = true }),
 })
 
+--remap to copy everything at once
+vim.keymap.set('n', '<leader>ya', 'ggVGy<C-o>', opts)
 
 --remaps for harpoon
 local harpoon = require("harpoon")

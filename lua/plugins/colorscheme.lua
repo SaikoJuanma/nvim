@@ -7,6 +7,7 @@
 --     end,
 --     opts = ...
 -- }
+--
 return {
     "rebelot/kanagawa.nvim",
     priority = 1000,  -- Ensure this plugin loads early
@@ -27,3 +28,64 @@ return {
     -- (Optional) Add any additional options here
     -- opts = { ... }
 }
+--
+-- return {
+--     "catppuccin/nvim",
+--     priority = 1000,  -- Ensure this plugin loads early
+--     config = function()
+--         -- Set the background to dark (or "light" for light mode)
+--         vim.o.background = "dark"
+--
+--         -- Load and configure Catppuccin
+--         require("catppuccin").setup({
+--             flavour = "mocha",  -- Set the flavour to mocha
+--             background = {      -- Configure background settings
+--                 light = "latte",
+--                 dark = "mocha",
+--             },
+--             transparent_background = false,  -- Set to true for transparent background
+--             term_colors = false,            -- Set to true to set terminal colors
+--             dim_inactive = {
+--                 enabled = false,  -- Set to true to dim inactive windows
+--                 shade = "dark",
+--                 percentage = 0.15,
+--             },
+--             no_italic = false,  -- Set to true to disable italics
+--             no_bold = false,    -- Set to true to disable bold
+--             no_underline = false,  -- Set to true to disable underline
+--             styles = {          -- Configure styles for different highlight groups
+--                 comments = { "italic" },
+--                 conditionals = { "italic" },
+--                 loops = {},
+--                 functions = {},
+--                 keywords = {},
+--                 strings = {},
+--                 variables = {},
+--                 numbers = {},
+--                 booleans = {},
+--                 properties = {},
+--                 types = {},
+--                 operators = {},
+--             },
+--             color_overrides = {},
+--             custom_highlights = {},
+--             default_integrations = true,  -- Enable default integrations
+--             integrations = {
+--                 cmp = true,
+--                 gitsigns = true,
+--                 nvimtree = true,
+--                 treesitter = true,
+--                 notify = false,
+--                 mini = {
+--                     enabled = true,
+--                     indentscope_color = "",
+--                 },
+--             },
+--         })
+--
+--         -- Apply the Catppuccin colorscheme
+--         vim.cmd([[colorscheme catppuccin]])
+--     end,
+--     -- (Optional) Add any additional options here
+--     -- opts = { ... }
+-- }
