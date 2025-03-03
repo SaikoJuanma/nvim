@@ -19,6 +19,7 @@ return {
         require("kanagawa").setup({
             -- (Optional) Add any custom configuration options here
             -- For example, you can specify the variant ("dragon", "wave", or "lotus")
+            transparent = true,
             colorscheme = "kanagawa-dragon",  -- Use the "dragon" variant
         })
 
