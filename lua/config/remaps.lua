@@ -29,6 +29,9 @@ local opts = { noremap = true, silent = true }
 -- save file
 vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 
+-- save file without formating
+vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
+
 -- remap to replace words
 vim.keymap.set('n', '<leader>rw', ':%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>', opts)
 
