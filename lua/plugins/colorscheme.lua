@@ -8,27 +8,27 @@
 --     opts = ...
 -- }
 --
-return {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,  -- Ensure this plugin loads early
-    config = function()
-        -- Set the background to dark (or "light" for light mode)
-        vim.o.background = "dark"
-
-        -- Load and configure Kanagawa
-        require("kanagawa").setup({
-            -- (Optional) Add any custom configuration options here
-            -- For example, you can specify the variant ("dragon", "wave", or "lotus")
-            transparent = true,
-            colorscheme = "kanagawa-dragon",  -- Use the "dragon" variant
-        })
-
-        -- Apply the Kanagawa colorscheme
-        vim.cmd([[colorscheme kanagawa-dragon]])
-    end,
-    -- (Optional) Add any additional options here
-    -- opts = { ... }
-}
+-- return {
+--     "rebelot/kanagawa.nvim",
+--     priority = 1000,  -- Ensure this plugin loads early
+--     config = function()
+--         -- Set the background to dark (or "light" for light mode)
+--         vim.o.background = "dark"
+--
+--         -- Load and configure Kanagawa
+--         require("kanagawa").setup({
+--             -- (Optional) Add any custom configuration options here
+--             -- For example, you can specify the variant ("dragon", "wave", or "lotus")
+--             transparent = true,
+--             colorscheme = "kanagawa-dragon",  -- Use the "dragon" variant
+--         })
+--
+--         -- Apply the Kanagawa colorscheme
+--         vim.cmd([[colorscheme kanagawa-dragon]])
+--     end,
+--     -- (Optional) Add any additional options here
+--     -- opts = { ... }
+-- }
 --
 -- return {
 --     "catppuccin/nvim",
@@ -90,3 +90,35 @@ return {
 --     -- (Optional) Add any additional options here
 --     -- opts = { ... }
 -- }
+return {
+    "folke/tokyonight.nvim",
+    priority = 1000,  -- Ensure this plugin loads early
+    config = function()
+        -- Set the background to dark (or "light" for light mode)
+        vim.o.background = "dark"
+
+        -- Load and configure Tokyonight
+        require("tokyonight").setup({
+            style = "storm",  -- Options: "storm", "moon", "night", "day"
+            transparent = true,  -- Enable transparency
+            terminal_colors = true,  -- Set terminal colors
+            styles = {
+                comments = { italic = true },
+                keywords = { italic = true },
+                functions = {},
+                variables = {},
+                sidebars = "dark",  -- Style for sidebars: "dark", "transparent", or "normal"
+                floats = "dark",    -- Style for floating windows
+            },
+            sidebars = { "qf", "help", "terminal", "packer" },  -- Which windows are sidebars
+            hide_inactive_statusline = false,
+            dim_inactive = false,
+            lualine_bold = false,
+        })
+
+        -- Apply the Tokyonight colorscheme
+        vim.cmd([[colorscheme tokyonight]])
+    end,
+    -- (Optional) Add additional options here
+    -- opts = { ... }
+}
