@@ -6,13 +6,6 @@ return{
         end
     },
     {
-        "williamboman/mason-lspconfig.nvim",
-        lazy = false,
-        opts = {
-            auto_install = true,
-        },
-    },
-    {
         "neovim/nvim-lspconfig",
         config = function()
             local lspconfig = require("lspconfig")
