@@ -3,18 +3,20 @@ return {
   branch = "v3.x",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+    "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
-    -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
     require("neo-tree").setup({
       filesystem = {
         filtered_items = {
-          visible = false,
-          hide_dotfiles = false,
-          hide_gitignored = false,
-          hide_hidden = false,
+          visible = false, -- Keep filtered items completely hidden
+          hide_by_name = {
+            ".git",
+            "node_modules",
+            ".cache",
+          },
+          hide_hidden = true, -- This is the important line for dotfiles
         },
         window = {
           mappings = {
@@ -24,7 +26,7 @@ return {
       },
     })
 
-    -- Set transparency by clearing background highlight groups
+    -- Set transparency
     vim.cmd([[
       highlight NeoTreeNormal guibg=NONE ctermbg=NONE
       highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
