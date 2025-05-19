@@ -17,7 +17,7 @@ return {
       message_template = '  <author> • <date> • <summary>',
       
       -- Date format in blame info
-      date_format = '%Y-%m-%d %H:%M',
+      date_format = '%d-%m-%Y %H:%M',
       
       -- Max message length
       message_max_length = 100
