@@ -8,16 +8,16 @@ return{
     {
         "neovim/nvim-lspconfig",
         config = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup({})
-            lspconfig.clangd.setup({
+            vim.lsp.config.lua_ls = {}
+            
+            vim.lsp.config.clangd = {
                 cmd = { "clangd", "--header-insertion=never" },
                 init_options = {
                     completeUnimported = false,
                     usePlaceholders = true,
                     clangdFileStatus = true,
                 }
-            })
+            }
         end
     }
 }
