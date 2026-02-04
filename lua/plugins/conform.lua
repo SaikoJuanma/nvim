@@ -10,7 +10,7 @@ return{
 
         vim.filetype.add({
             extension = {
-                overlay = "c",
+                --overlay = "c",
             },
         })
 
