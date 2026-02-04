@@ -7,18 +7,23 @@ return{
         },
     },
     config = function ()
+
+        vim.filetype.add({
+            extension = {
+                overlay = "c",
+            },
+        })
+
         -- Setup conform.nvim
         require("conform").setup({
             formatters_by_ft = {
                 c = {"clang-format"},
                 cpp = {"clang-format"},
-                h = {"clang-format"},
-                hpp = {"clang-format"},
             },
         })
         -- Auto format on save for C files
         vim.api.nvim_create_autocmd("BufWritePre", {
-            pattern = {"*.c", "*.cpp", "*.h", "*.hpp"},
+            pattern = {"*.c", "*.cpp", "*.h", "*.hpp", "*.overlay"},
             callback = function()
                 require("conform").format()
             end,
